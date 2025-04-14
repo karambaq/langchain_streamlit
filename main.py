@@ -14,6 +14,10 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.chat_models import init_chat_model # Assuming this is a custom or local utility function
 from cl import get_streamlit_cb
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 # Constants
 CHROMA_DB_DIR = "./chroma_db"
 HTML_DATA_DIR = "./html_data"
